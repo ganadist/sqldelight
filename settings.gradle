@@ -1,3 +1,7 @@
+plugins {
+    id "com.gradle.enterprise" version "3.6.1"
+}
+
 rootProject.name = 'sqldelight'
 
 include ':drivers:android-driver'
@@ -18,3 +22,11 @@ include ':sqldelight-gradle-plugin'
 include ':sqldelight-idea-plugin'
 include ':sqlite-migrations'
 include ':test-util'
+
+gradleEnterprise {
+    buildScan {
+        termsOfServiceUrl = "https://gradle.com/terms-of-service"
+        termsOfServiceAgree = "yes"
+        publishAlways()
+    }
+}
